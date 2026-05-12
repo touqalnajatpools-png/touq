@@ -1,6 +1,12 @@
 import "./css/style.css";
 
-import { Inter } from "next/font/google";
+import { Cairo } from "next/font/google";
+
+const cairo = Cairo({
+  subsets: ["arabic"],
+  variable: "--font-cairo",
+  display: "swap",
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,9 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="Ar" dir="rtl" className="2xl:text-[20px]" className="scroll-smooth">
       <body
-        className={`${inter.variable} bg-gray-50 font-inter tracking-tight text-gray-900 antialiased`}
+        className={`${cairo.variable} bg-gray-50 font-cairo tracking-tight text-gray-900 antialiased`}
       >
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
           {children}
